@@ -53,24 +53,26 @@ cat <<EOF >/etc/v2ray/config.json
         "loglevel": "warning"
     },
     "inbounds": [
-        {
-            "listen": "0.0.0.0",
-            "port": 8080,
-            "protocol": "vmess",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "11111111-1111-1111-1111-111111111111",
-                        "alterId": 0
-                    }
-                ],
-                "disableInsecureEncryption": true
-            },
-            "streamSettings": {
-                "network": "ws"
-            }
+    {
+      "port": 8080,
+      "protocol": "VLESS",
+      "settings": {
+        "clients": [
+          {
+            "id": "7795cc9e-722e-4507-b67b-7e9599bf17dd",
+            "alterId": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/"
         }
-    ],
+      }
+    }
+  ],
     "outbounds": [
         {
             "protocol": "freedom"
